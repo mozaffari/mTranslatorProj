@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">mTranslator</string>
+    <string name="Translation">ترجمه</string>
+    <string name="arabic">عربی</string>
+    <string name="chines">چینی</string>
+    <string name="english">انگلیسی</string>
+    <string name="error">خطا:</string>
+    <string name="farsi">فارسی</string>
+    <string name="pashto">پشتو</string>
+    <string name="some_thing_bad_happend">اتفاقی بدی افتاده:</string>
+    <string name="tap_to_enter_text">برای وارد کردن متن کلیک کنید</string>
+    <string name="urdu">اردو</string>
+</resources>

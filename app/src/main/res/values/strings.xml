@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">mTranslator</string>
+    <string name="tap_to_enter_text">Tap To Enter Text</string>
+    <string name="Translation">Translation </string>
+    <string name="some_thing_bad_happend">Something bad Happend:</string>
+    <string name="error">Error:</string>
+    <string name="english">English</string>
+    <string name="farsi">Farsi</string>
+    <string name="pashto">Pashto</string>
+    <string name="arabic">Arabic</string>
+    <string name="urdu">Urdu</string>
+    <string name="chines">Chines</string>
+</resources>

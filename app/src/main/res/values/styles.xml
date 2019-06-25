@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textViewStyle">@style/vazir_font</item>
+        <item name="editTextStyle">@style/edit_font</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="vazir_font" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/vazir</item>
+        <item name="android:textColor">#000</item>
+    </style>
+
+    <style name="edit_font" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/vazir</item>
+    </style>
+
+</resources>
