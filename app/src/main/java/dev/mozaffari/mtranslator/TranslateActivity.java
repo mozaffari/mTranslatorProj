@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -27,7 +28,7 @@ import java.net.URLEncoder;
 import dev.mozaffari.mtranslator.db.HistoryDatabaseHelper;
 import dev.mozaffari.mtranslator.models.Translation;
 
-public class TranslateActivity extends AppCompatActivity {
+public class TranslateActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final String API_URL = "https://mozaffari.dev/api/gtranslate/";
     private RequestQueue requestQueue;
@@ -35,6 +36,8 @@ public class TranslateActivity extends AppCompatActivity {
     EditText etFrom,etTo;
 
     Translation  translation;
+
+    ImageButton ivClear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,16 +47,12 @@ public class TranslateActivity extends AppCompatActivity {
         etFrom = findViewById(R.id.et_orignal_text);
         etTo = findViewById(R.id.et_translated);
 
+        ivClear = findViewById(R.id.iv_clear);
+        ivClear.setOnClickListener(this);
 
-        etTo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getRequestQueue().cancelAll(this);
-//                Intent intent = new Intent();
-//                setResult(Activity.RESULT_OK,intent);
-                finish();
-            }
-        });
+
+        etTo.setOnClickListener(this);
+        ivClear.setOnClickListener(this);
 
         translation = new Translation();
 
@@ -148,5 +147,28 @@ public class TranslateActivity extends AppCompatActivity {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
         return requestQueue;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.et_tap_to:
+            {
+                getRequestQueue().cancelAll(this);
+                finish();
+                break;
+            }
+            case R.id.iv_clear:
+            {
+
+                if(etFrom.getText().toString().equals(""))
+                    finish();
+                else
+                    etFrom.setText("");
+
+                break;
+            }
+        }
     }
 }
