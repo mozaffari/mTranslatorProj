@@ -153,7 +153,7 @@ public class TranslateActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.et_tap_to:
+            case R.id.et_translated:
             {
                 getRequestQueue().cancelAll(this);
                 finish();
