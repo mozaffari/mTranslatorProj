@@ -4,20 +4,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Translation {
-    @SerializedName("id")
-    @Expose
     private int id;
-    @SerializedName("from")
-    @Expose
     private String translateFrom;
-    @SerializedName("to")
-    @Expose
     private String translateTo;
-    @SerializedName("orignal_text")
-    @Expose
     private String orignalText;
-    @SerializedName("translated_text")
-    @Expose
     private String translatedText;
 
     private String translateFromCode;

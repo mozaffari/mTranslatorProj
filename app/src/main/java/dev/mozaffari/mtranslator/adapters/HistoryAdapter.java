@@ -83,10 +83,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
         }
     }
 
-    private void deletHistory(int id) {
-        Toast.makeText(context, "Going to delete history by id of "+id, Toast.LENGTH_SHORT).show();
-
-    }
+//    private void deletHistory(int id) {
+//        Toast.makeText(context, "Going to delete history by id of "+id, Toast.LENGTH_SHORT).show();
+//
+//    }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;

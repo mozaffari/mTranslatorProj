@@ -34,37 +34,4 @@ public class SettingsManager {
 
 
 
-    public static Boolean isUserFollowedCategories(Context context)
-    {
-        pref = PreferenceManager.getDefaultSharedPreferences(context);
-        String lang = pref.getString("UserFollowedCategories", "null");
-        return (!lang.equals("null") || lang.equals("false"));
-    }
-
-    public static void setUserFollowedCategories(Context context, Boolean bol)
-    {
-        pref = PreferenceManager.getDefaultSharedPreferences(context);
-        pref.edit().putString("UserFollowedCategories", String.valueOf(bol)).commit();
-
-    }
-
-    ///
-
-
-    public static void setFollowedSources(Context context,String vals){
-
-        pref = PreferenceManager.getDefaultSharedPreferences(context);
-        pref.edit().putString("followed_sources", vals).commit();
-    }
-    public static JSONArray getFollowedSources(Context context) throws JSONException {
-        pref = PreferenceManager.getDefaultSharedPreferences(context);
-        String string = pref.getString("followed_sources", "null");
-        JSONArray jsonArray = new JSONArray();
-        if(!string.equals("null"))
-            jsonArray= new JSONArray(string);
-        return jsonArray;
-    }
-
-
-
 }

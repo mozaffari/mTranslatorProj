@@ -151,46 +151,4 @@ public class HistoryDatabaseHelper extends SQLiteOpenHelper {
         }
         return translations;
     }
-
-    public Boolean isPostBookmarked(Integer id) {
-
-        String POSTS_SELECT_QUERY =
-                String.format("SELECT * FROM bookmarks WHERE id=%s;",
-                        String.valueOf(id)
-                );
-
-        // "getReadableDatabase()" and "getWriteableDatabase()" return the same object (except under low
-        // disk space scenarios)
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(POSTS_SELECT_QUERY, null);
-
-        try {
-            if (cursor.moveToFirst()) {
-
-                return true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-
-            cursor.close();
-            return false;
-        }
-
-    }
-
-    // Delete all posts and users in the database
-    public void deleteAllPostsAndUsers() {
-        SQLiteDatabase db = getWritableDatabase();
-        db.beginTransaction();
-        try {
-            // Order of deletions is important when foreign key relationships exist.
-            db.delete(TABLE_NAME, null, null);
-            db.setTransactionSuccessful();
-        } catch (Exception e) {
-            Log.d(TAG, "Error while trying to delete all posts and users");
-        } finally {
-            db.endTransaction();
-        }
-    }
 }
